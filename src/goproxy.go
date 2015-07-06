@@ -26,7 +26,6 @@ func proxy(responseWriter http.ResponseWriter, request *http.Request) {
     for key, valueArray := range response.Header {
       for _, value := range valueArray {
         responseWriter.Header().Add(key, value)
-        log.Println(key, value)
       }
     }
     responseWriter.WriteHeader(response.StatusCode)
